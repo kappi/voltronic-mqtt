@@ -37,19 +37,24 @@ This script reads data from an inverter via a serial port and publishes the valu
 Edit the `mqtt_inverter.py` script to update the configuration variables at the top of the script:
 
 ```python
-INTERVAL = 15  # Interval in seconds
-SERIAL_PORT_1 = "/dev/ttyUSB1"
-SERIAL_PORT_2 = "/dev/ttyUSB2"
+...
+
+# Configuration variables
+INTERVAL = 10  # Refresh interval in seconds, 10s minimum
+SERIAL_PORT_1 = "/dev/ttyUSB0"
+SERIAL_PORT_2 = "/dev/ttyUSB0" # Second serial port, if you have disconnection problems and following changes in path. Can be the same as first one. (udev rules sucks...)
 BAUD_RATE = 2400
-MQTT_SERVER = "192.168.168.252"
+MQTT_SERVER = "mqttServer"
 MQTT_PORT = 1883
-MQTT_USERNAME = "mosquit"
-MQTT_PASSWORD = "mosquit"
-MQTT_CLIENT_ID = "voltronic_bd8041d0cdf131a6ba4e5b3360b8bc5a"
-TOPIC_QPIGS5 = "homeassistant/QPIGS5"
-TOPIC_QPIGS2 = "homeassistant/QPIGS2"
-TOPIC_INVERTER_POWER = "homeassistant/inverterPower"
-TOPIC_PVIN = "homeassistant/PVin"
+MQTT_USERNAME = "mqttUser"
+MQTT_PASSWORD = "mqttPass"
+MQTT_CLIENT_ID = "mqttClientID"
+TOPIC_PV1 = "homeassistant/PV1power" # Topic for first MPPT tracker of Axpert 7.2kVA
+TOPIC_PV2 = "homeassistant/PV2power" # Topic for second MPPT tracker of Axpert 7.2kVA
+TOPIC_PVIN = "homeassistant/PVin" # Topic for sum of previous two values
+TOPIC_INVERTER_POWER = "homeassistant/inverterPower" # Topic for inverter load in VA
+
+...
 ```
 
 ## Running as a Systemd Service
