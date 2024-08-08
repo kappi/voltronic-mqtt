@@ -1,7 +1,10 @@
 
-# MQTT Inverter Monitor
+# MQTT Inverter Monitor for Voltronic inverters
 
 This script reads data from an inverter via a serial port and publishes the values to an MQTT server. It is designed to run periodically and can be set up as a systemd service for continuous operation.
+It is created for specific use with Voltronic Axpert MAX 7200 (or Axpert MAX 7.2k or Kodak, Solarpower or whatever chinese reselers name...)
+It extracts both MPPT trackers power.
+It has switching function between 2 serial ports, because my setup needs it (maybe issue inside inverter). You can simply insert same port to both config variables if you don't have same issues like me.
 
 ## Requirements
 
