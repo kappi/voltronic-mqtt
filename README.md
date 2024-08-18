@@ -16,8 +16,8 @@
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/mqtt-inverter-monitor.git
-    cd mqtt-inverter-monitor
+    git clone https://github.com/kappi/voltronic-mqtt.git
+    cd voltronic-mqtt
     ```
 
 2. Install the required libraries:
